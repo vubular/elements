@@ -1,0 +1,24 @@
+{
+  "private": false,
+  "name": "@vubular/elements",
+  "version": "0.0.2",
+  "description": "vubular elements",
+  "main": "src/index.js",
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build"
+  },
+  "dependencies": {
+    "vue": "^2.6.11"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vubular/elements.git"
+  },
+  "author": "vubular",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vubular/elements/issues"
+  },
+  "homepage": "https://github.com/vubular/elements#readme"
+}
