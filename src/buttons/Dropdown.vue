@@ -29,6 +29,8 @@
 				if(!this.isFocused) {
 					this.isFocused = true;
 					this.$emit("focus");
+				} else {
+					this.blur();
 				}
 			},
 			blur() {
