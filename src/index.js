@@ -9,6 +9,7 @@ import DateTip from './dynamic/DateTip.vue';
 import Pagination from './buttons/Pagination.vue';
 import Tabs from './buttons/Tabs.vue';
 import Dropdown from './buttons/Dropdown.vue';
+import ColorPicker from './buttons/ColorPicker.vue';
 
 // Canvas Components
 import MoreLess from './canvas/MoreLess.vue';
@@ -20,5 +21,6 @@ export {
 	Pagination as Pagination,
 	Tabs as Tabs,
 	Dropdown as Dropdown,
+	ColorPicker as ColorPicker,
 	MoreLess as MoreLess
 };
