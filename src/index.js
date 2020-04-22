@@ -10,6 +10,7 @@ import Pagination from './buttons/Pagination.vue';
 import Tabs from './buttons/Tabs.vue';
 import Dropdown from './buttons/Dropdown.vue';
 import ColorPicker from './buttons/ColorPicker.vue';
+import Archive from './buttons/Archive.vue';
 
 // Canvas Components
 import MoreLess from './canvas/MoreLess.vue';
@@ -22,5 +23,6 @@ export {
 	Tabs as Tabs,
 	Dropdown as Dropdown,
 	ColorPicker as ColorPicker,
+	Archive as Archive,
 	MoreLess as MoreLess
 };
