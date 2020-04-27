@@ -23,7 +23,11 @@
 		},
 		beforeMount() {
 			if(!this.date) {
-				this.parsedDate = new Date();
+				if(this.$slots.default[0].text) {
+					this.parsedDate = new Date(Date.parse(this.$slots.default[0].text));
+				} else {
+					this.parsedDate = new Date();
+				}
 			} else {
 				if(String(this.date)) { this.parsedDate = new Date(Date.parse(this.date)); }
 				if(typeof this.date =='object' && this.date.created_at) { this.parsedDate = new Date(Date.parse(this.date.created_at)); }
