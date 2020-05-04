@@ -1,6 +1,7 @@
 <template>
 	<button type="button"
-		class="button is-outlined is-danger"
+		class="button is-danger"
+		:class="{'is-outlined': dialog}"
 		@click="doClick()"><i class="fa fa-archive"></i></button>
 </template>
 <script>
@@ -10,17 +11,29 @@
 			dialog: {
 				type: Boolean,
 				default: false
+			},
+			title: {
+				type: String,
+				default: "Archive item"
+			},
+			message: {
+				type: String,
+				default: "You are about to <b>archive</b> an item?<br/>Archiving will unlist item from references."
 			}
 		},
 		methods: {
 			doClick() {
-				this.$emit("click");
-				if(this.dialog) this.confirm();
+				if(this.dialog) {
+					this.$emit("click");
+					this.confirm();
+				} else {
+					this.$emit("archived");
+				}
 			},
 			confirm() {
 				this.$buefy.dialog.confirm({
-					title: "Archive item",
-					message: "You are about to <b>archive</b> an item?<br/>Archiving will unlist item from references.",
+					title: this.title,
+					message: this.message,
 					confirmText: "Archive",
 					type: "is-danger",
 					hasIcon: true,

@@ -1,6 +1,7 @@
 // Static Components
 import Hero from './statics/Hero.vue';
 import NotYet from './statics/NotYet.vue';
+import Plain from './statics/Plain.vue';
 
 // Dynamic Components
 import DateTip from './dynamic/DateTip.vue';
@@ -19,6 +20,7 @@ import MoreLess from './canvas/MoreLess.vue';
 export {
 	Hero as Hero,
 	NotYet as NotYet,
+	Plain as Plain,
 	DateTip as DateTip,
 	Pagination as Pagination,
 	Tabs as Tabs,
