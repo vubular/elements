@@ -5,6 +5,7 @@ import Plain from './statics/Plain.vue';
 
 // Dynamic Components
 import DateTip from './dynamic/DateTip.vue';
+import ShowLink from './dynamic/ShowLink.vue';
 
 // Button Components
 import Pagination from './buttons/Pagination.vue';
@@ -22,6 +23,7 @@ export {
 	NotYet as NotYet,
 	Plain as Plain,
 	DateTip as DateTip,
+	ShowLink as ShowLink,
 	Pagination as Pagination,
 	Tabs as Tabs,
 	Dropdown as Dropdown,

@@ -18,7 +18,6 @@
 			<li @click="switchPage(activePage+10)" :class="{'disabled': activePage > total-10}">
 				<a class="pagination-link"><i class="fal fa-chevron-double-right"></i></a>
 			</li>
-
 		</ul>
 	</nav>
 </template>
@@ -26,6 +25,9 @@
 	export default {
 		name: 'Pagination',
 		props: {
+			active: {
+				type: Number
+			},
 			total: {
 				type: Number,
 				default: 1
@@ -40,6 +42,13 @@
 			switchPage(page) {
 				this.activePage = page;
 				this.$emit('active', page)
+			}
+		},
+		watch: {
+			active: function (newValue, oldValue) {
+				if(newValue && newValue!=oldValue && typeof newValue === 'number' && newValue!=this.activePage) {
+					this.switchPage(newValue);
+				}
 			}
 		}
 	}
