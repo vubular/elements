@@ -2,7 +2,7 @@
 	<button type="button"
 		class="button is-danger"
 		:class="{'is-outlined': dialog}"
-		@click="doClick()"><i class="fa fa-archive"></i></button>
+		@click="doClick()"><slot><i class="fa fa-archive"></i></slot></button>
 </template>
 <script>
 	export default {

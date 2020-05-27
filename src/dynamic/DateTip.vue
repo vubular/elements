@@ -23,7 +23,7 @@
 		},
 		beforeMount() {
 			if(!this.date) {
-				if(this.$slots.default[0].text) {
+				if(this.$slots.default && this.$slots.default[0] && this.$slots.default[0].text) {
 					this.parsedDate = new Date(Date.parse(this.$slots.default[0].text));
 				} else {
 					this.parsedDate = new Date();
