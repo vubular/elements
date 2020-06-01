@@ -1,7 +1,10 @@
 // Static Components
 import Hero from './statics/Hero.vue';
 import NotYet from './statics/NotYet.vue';
-import Plain from './statics/Plain.vue';
+
+// Text Components
+import Plain from './text/Plain.vue';
+import Trim from './text/Trim.vue';
 
 // Dynamic Components
 import DateTip from './dynamic/DateTip.vue';
@@ -22,6 +25,7 @@ export {
 	Hero as Hero,
 	NotYet as NotYet,
 	Plain as Plain,
+	Trim as Trim,
 	DateTip as DateTip,
 	ShowLink as ShowLink,
 	Pagination as Pagination,

@@ -15,7 +15,7 @@
 				get() {
 					if(this.text) return this.text;
 					if(this.$slots.default[0].text) return this.$slots.default[0].text;
-					return "";
+					return '';
 				}
 			}
 		}
