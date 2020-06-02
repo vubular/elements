@@ -63,9 +63,9 @@
 		methods: {
 			parseDate(date) {
 				this.parsedDate = new Date();
-				if(typeof date == 'string') { this.parsedDate = new Date(Date.parse(date)); }
-				if(typeof date =='object' && date.created_at) { this.parsedDate = new Date(Date.parse(date.created_at)); }
-				if(typeof date =='object' && date.updated_at) { this.parsedDate = new Date(Date.parse(date.updated_at)); }
+				if(date && typeof date == 'string') { this.parsedDate = new Date(Date.parse(date)); }
+				if(date && typeof date =='object' && date.created_at) { this.parsedDate = new Date(Date.parse(date.created_at)); }
+				if(date && typeof date =='object' && date.updated_at) { this.parsedDate = new Date(Date.parse(date.updated_at)); }
 			}
 		}
 	};
