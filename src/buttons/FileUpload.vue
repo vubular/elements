@@ -20,13 +20,8 @@
 	export default {
 		name: 'FileUploadButton',
 		props: {
-			previous: {
-				type: String,
-				default: null
-			},
-			directory: {
-				type: String
-			},
+			previous: String,
+			directory: String,
 			size: {
 				type: String,
 				default: 'is-medium'

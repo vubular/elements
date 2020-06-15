@@ -17,6 +17,7 @@ import Dropdown from './buttons/Dropdown.vue';
 import ColorPicker from './buttons/ColorPicker.vue';
 import Archive from './buttons/Archive.vue';
 import Edit from './buttons/Edit.vue';
+import Options from './buttons/Options.vue';
 
 // Canvas Components
 import MoreLess from './canvas/MoreLess.vue';
@@ -34,5 +35,6 @@ export {
 	ColorPicker as ColorPicker,
 	Archive as Archive,
 	Edit as Edit,
+	Options as Options,
 	MoreLess as MoreLess
 };

@@ -1,28 +1,25 @@
 <template>
 	<div class="is-fullwidth color-picker-wrap">
 		<button type="button"
-				class="button is-medium color-picked"
-				@click="pickColor"
-				:style="pickedColorBackground"></button>
+			class="button is-medium color-picked"
+			@click="pickColor"
+			:style="pickedColorBackground"></button>
 		<button v-if="ui.focus"
-				type="button"
-				class="button is-medium"
-				@click="pickedColor">OK</button>
+			type="button"
+			class="button is-medium"
+			@click="pickedColor">OK</button>
 		<vue-color v-if="ui.focus"
-				   v-model="ui.color"
-				   :presetColors="ui.presets"
-				   @input="pushUpdates"
-				   :key="color"></vue-color>
+			v-model="ui.color"
+			:presetColors="ui.presets"
+			@input="pushUpdates"
+			:key="color"></vue-color>
 	</div>
 </template>
 <script>
 	export default {
 		name: 'ColorPicker',
 		props: {
-			color: {
-				type: String,
-				default: null
-			}
+			color: String
 		},
 		created() { if(this.color==null) { this.ui.color = this.getRandomHexColor(); this.pickedColor(); } },
 		data() {

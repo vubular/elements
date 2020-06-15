@@ -17,9 +17,7 @@
 	export default {
 		name: 'Tabs',
 		props: {
-			tabs: {
-				type: Array
-			},
+			tabs: Array,
 			expandable: {
 				type: Boolean,
 				default: false

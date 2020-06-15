@@ -26,9 +26,7 @@
 			id: {
 				type: [String, Number]
 			},
-			to: {
-				type: String
-			}
+			to: String
 		},
 		computed: {
 			editRouter() {
