@@ -1,6 +1,6 @@
 <template>
 	<router-link :to="routerLinkTo">
-		<slot v-if="$slots.default[0] && $slots.default[0].text!=''"></slot>
+		<slot v-if="$slots && $slots.default && $slots.default[0] && $slots.default[0].text!=''"></slot>
 		<plain v-else>{{noLabel}}</plain>
 	</router-link>
 </template>

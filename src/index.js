@@ -1,6 +1,7 @@
 // Static Components
 import Hero from './statics/Hero.vue';
 import NotYet from './statics/NotYet.vue';
+import Conditional from './statics/Conditional.vue';
 
 // Text Components
 import Plain from './text/Plain.vue';
@@ -25,6 +26,7 @@ import MoreLess from './canvas/MoreLess.vue';
 export {
 	Hero as Hero,
 	NotYet as NotYet,
+	Conditional as Conditional,
 	Plain as Plain,
 	Trim as Trim,
 	DateTip as DateTip,
