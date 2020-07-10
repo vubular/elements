@@ -2,7 +2,7 @@
 	<button type="button"
 		class="button is-danger"
 		:class="{'is-outlined': dialog}"
-		@click="doClick()"><slot><i class="fa fa-archive"></i></slot></button>
+		@click="doClick()"><slot><i :class="icon"></i></slot></button>
 </template>
 <script>
 	export default {
@@ -19,6 +19,14 @@
 			message: {
 				type: String,
 				default: "You are about to <b>archive</b> an item?<br/>Archiving will unlist item from references."
+			},
+			button: {
+				type: String,
+				default: "Archive"
+			},
+			icon: {
+				type: String,
+				default: "fa fa-archive"
 			}
 		},
 		methods: {
@@ -34,10 +42,10 @@
 				this.$buefy.dialog.confirm({
 					title: this.title,
 					message: this.message,
-					confirmText: "Archive",
+					confirmText: this.button,
 					type: "is-danger",
 					hasIcon: true,
-					icon: "archive fa-2x",
+					icon: this.icon.split(" ").pop().replace("fa-","") + " fa-2x",
 					iconPack: "fa",
 					onConfirm: () =>  { this.$emit("archived") },
 					onCancel: () =>  { this.$emit("canceled") }
