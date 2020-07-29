@@ -1,5 +1,5 @@
 <template>
-	<div class="dropdown is-right" :class="{'is-active': isFocused}" v-on-clickaway="blur">
+	<div :class="ddClass" v-on-clickaway="blur">
 		<div class="dropdown-trigger">
 			<slot name="trigger" v-bind="{focus, isFocused}">
 				<button type="button" class="button is-small" @click="focus">
@@ -19,6 +19,12 @@
 	export default {
 		name: "Dropdown",
 		mixins: [ clickaway ],
+		props: {
+			position: {
+				type: String,
+				default: 'is-right'
+			}
+		},
 		data() {
 			return {
 				isFocused: false
@@ -38,6 +44,14 @@
 					this.isFocused = false;
 					this.$emit("blur");
 				}
+			},
+		},
+		computed: {
+			ddClass() {
+				var ddClass = "dropdown";
+				if(this.isFocused) ddClass = ddClass + " is-active"
+				if(this.position) ddClass = ddClass + " " + this.position;
+				return ddClass;
 			}
 		}
 	}
