@@ -6,6 +6,7 @@ import Conditional from './statics/Conditional.vue';
 // Text Components
 import Plain from './text/Plain.vue';
 import Trim from './text/Trim.vue';
+import Translate from './text/Translate.vue';
 
 // Dynamic Components
 import DateTip from './dynamic/DateTip.vue';
@@ -29,6 +30,7 @@ export {
 	Conditional as Conditional,
 	Plain as Plain,
 	Trim as Trim,
+	Translate as Translate,
 	DateTip as DateTip,
 	ShowLink as ShowLink,
 	Pagination as Pagination,
