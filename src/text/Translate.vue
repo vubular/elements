@@ -7,7 +7,7 @@
 			}
 		},
 		render() {
-			return this.$i18n ? this.$t(this.content) : this.content;
+			return this.$i18n ? this._v(this.$t(this.content)) : this._v(this.content);
 		},
 		computed: {
 			content: {
