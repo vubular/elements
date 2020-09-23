@@ -1,7 +1,7 @@
 <template>
 	<div class="tabs is-fullwidth is-primary">
 		<ul class="is-marginless">
-			<template v-for="(tab, t) in tabs"></template>
+			<template v-for="(tab, t) in tabs">
 				<li v-if="JSON.stringify(tab)[0]=='{'"
 					:key="t"
 					:class="{'is-active': activeTab==t}"
