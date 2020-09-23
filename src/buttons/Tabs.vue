@@ -1,11 +1,24 @@
 <template>
 	<div class="tabs is-fullwidth is-primary">
 		<ul class="is-marginless">
-			<li v-for="(tab, t) in tabs" :key="t"
-				:class="{'is-active': activeTab==t}"
-				@click="switchTab(tab, t)">
-				<a v-html="tab"></a>
-			</li>
+			<template v-for="(tab, t) in tabs"></template>
+				<li v-if="JSON.stringify(tab)[0]=='{'"
+					:key="t"
+					:class="{'is-active': activeTab==t}"
+					@click="switchTabObject(tab, t)">
+					<a>
+						<span v-if="tab.icon" class="icon"><i :class="tab.icon"></i></span>
+						<span v-if="tab.label">{{tab.label}}</span>
+						<plain v-if="!tab.icon && !tab.label">{{tab}}</plain>
+					</a>
+				</li>
+				<li v-else
+					:key="t"
+					:class="{'is-active': activeTab==t}"
+					@click="switchTab(tab, t)">
+					<a v-html="tab"></a>
+				</li>
+			</template>
 			<li v-if="expandable" class="is-pulled-right has-text-right is-narrow">
 				<i v-if="!expanded" @click="toggle" class="fal fa-lg fa-arrow-to-right expand-icon"></i>
 				<i v-else @click="toggle" class="fal fa-lg fa-arrow-to-left expand-icon"></i>
@@ -33,6 +46,14 @@
 			switchTab(label, index) {
 				this.activeTab = index;
 				this.$emit('active', label)
+			},
+			switchTabObject(tab, index) {
+				this.activeTab = index;
+				if(tab.label) {
+					this.$emit('active', tab.label);
+				} else {
+					this.$emit('active', tab);
+				}
 			},
 			toggle() {
 				this.$emit("expand");

@@ -54,7 +54,6 @@
 <style scoped>
 	.hero-body i { font-size: 64px; float:left; margin: 0 40px; }
 	.hero { margin-bottom: 20px; border-radius: 5px; }
-	.hero.is-white { box-shadow: 0px 0px 0px 1px rgba(0,0,0,0.1); }
 	.hero-body.compact { padding: 1.5rem; }
 	.hero-body.compact i { font-size: 40px; margin: 0 20px; }
 	.hero-body.compact .column .title { font-weight: 300; margin: 0; }
