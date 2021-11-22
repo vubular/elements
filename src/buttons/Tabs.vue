@@ -16,7 +16,21 @@
 					:key="t"
 					:class="{'is-active': activeTab==t}"
 					@click="switchTab(tab, t)">
-					<a v-html="tab"></a>
+					<a v-html="tab" v-if="!withIcons"></a>
+					<a v-if="withIcons">
+						<span v-if="tab=='Dashboard'">
+							<i class="fa fa-home"></i>
+							{{tab}}
+						</span>	
+						<span v-for="icon in installedApps">
+							<span v-if="icon.namespace==tab">
+								<i :class="icon.icon"></i> 
+								<span> 
+									{{tab}} 
+								</span>
+							</span>
+						</span>
+					</a>	
 				</li>
 			</template>
 			<li v-if="expandable" class="is-pulled-right has-text-right is-narrow">
@@ -32,6 +46,10 @@
 		props: {
 			tabs: Array,
 			expandable: {
+				type: Boolean,
+				default: false
+			},
+			withIcons: {
 				type: Boolean,
 				default: false
 			}
