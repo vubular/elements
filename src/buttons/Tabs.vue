@@ -52,7 +52,8 @@
 			withIcons: {
 				type: Boolean,
 				default: false
-			}
+			},
+			tabIndex: 0
 		},
 		data() {
 			return {
@@ -63,7 +64,7 @@
 		methods: {
 			switchTab(label, index) {
 				this.activeTab = index;
-				this.$emit('active', label)
+				this.$emit('active', label, index);
 			},
 			switchTabObject(tab, index) {
 				this.activeTab = index;
@@ -76,6 +77,13 @@
 			toggle() {
 				this.$emit("expand");
 				this.expanded = !this.expanded;
+			}
+		},
+		watch: {
+			tabIndex(newValue, oldValue) {
+				if(newValue!=oldValue) {
+					this.activeTab = this.tabIndex;
+				}
 			}
 		}
 	}
