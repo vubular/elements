@@ -90,7 +90,7 @@
 </script>
 <style scoped>
 	.tabs li { margin-top: 0; }
-	.tabs li a { color: #dbdbdb; }
+	.tabs li a { color: #090909; }
 	.tabs li a:hover { color: black; transition: color ease 1s; }
 	.tabs li.is-active a { color: #7957d5; }
 	.tabs.capitalize li a { text-transform: capitalize; }
