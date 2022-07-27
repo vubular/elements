@@ -14,7 +14,7 @@
 	export default {
 		name: "Conditional",
 		props: {
-			condition: [ Boolean, String, Number, Object, Array ],
+			condition: [ Boolean, String, Number, Object, Array, Date ],
 			icon: {
 				type: String,
 				default: "fal fa-divide fa-3x fa-border"
