@@ -18,15 +18,15 @@
 					@click="switchTab(tab, t)">
 					<a v-html="tab" v-if="!withIcons"></a>
 					<a v-if="withIcons">
-						<span v-if="tab=='Dashboard'">
+						<span v-if="tab== $t('Dashboard')">
 							<i class="fa fa-home"></i>
-							{{tab}}
+							{{tab | translate}}
 						</span>	
 						<span v-for="icon in installedApps">
 							<span v-if="icon.namespace==tab">
 								<i :class="icon.icon"></i> 
 								<span> 
-									{{tab}} 
+									{{tab | translate}} 
 								</span>
 							</span>
 						</span>
