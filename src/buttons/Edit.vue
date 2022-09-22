@@ -5,16 +5,16 @@
 			class="button edit-button is-info is-small"
 			@click="$emit('edit')">
 			<span class="icon"><i class="fa fa-edit"></i></span>
-			<span>Edit</span>
+			<span>{{'Edit' | translate}}</span>
 		</button>
 		<template v-else>
 			<router-link v-if="$route" :to="editRouter" class="button edit-button is-info is-small">
 				<span class="icon"><i class="fa fa-edit"></i></span>
-				<span>Edit</span>
+				<span>{{'Edit' | translate}}</span>
 			</router-link>
 			<a v-else :href="editRouter" class="button edit-button is-info is-small">
 				<span class="icon"><i class="fa fa-edit"></i></span>
-				<span>Edit</span>
+				<span>{{'Edit' | translate}}</span>
 			</a>
 		</template>
 	</div>

@@ -1,7 +1,7 @@
 {
   "private": false,
   "name": "@vubular/elements",
-  "version": "0.0.29",
+  "version": "0.0.30",
   "description": "vubular elements",
   "main": "src/index.js",
   "scripts": {
