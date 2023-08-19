@@ -13,7 +13,7 @@
 					@click="switchPage(page)" v-text="page"></a>
 			</li>
 			<li @click="switchPage(activePage+1)" :class="{'disabled': activePage == total}">
-				<a class="pagination-link">Next</span> <i class="fal fa-chevron-right"></i></a>
+				<a class="pagination-link">Next<i class="fal fa-chevron-right"></i></a>
 			</li>
 			<li @click="switchPage(activePage+10)" :class="{'disabled': activePage > total-10}">
 				<a class="pagination-link"><i class="fal fa-chevron-double-right"></i></a>
