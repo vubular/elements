@@ -36,9 +36,24 @@
 				activePage: 1
 			}
 		},
-		methods: {
+    created() {
+      const urlPage = parseInt(this.$route.query.page) || 1;
+      const storedPage = parseInt(localStorage.getItem('currentPage')) || 1;
+      this.activePage = urlPage || storedPage;
+    },
+    methods: {
 			switchPage(page) {
-				this.activePage = page;
+        if (page < 1 || page > this.total || page === this.activePage) return;
+
+        this.activePage = page;
+        localStorage.setItem('currentPage', page);
+
+        this.$router.push({
+          query: {
+            ...this.$route.query,
+            page: page
+          }
+        });
 				this.$emit('active', page)
 			}
 		},
@@ -47,7 +62,13 @@
 				if(newValue && newValue!=oldValue && typeof newValue === 'number' && newValue!=this.activePage) {
 					this.switchPage(newValue);
 				}
-			}
+			},
+      '$route.query.page'(newPage) {
+        const page = parseInt(newPage) || 1;
+        if (page !== this.activePage) {
+          this.activePage = page;
+        }
+      },
 		}
 	}
 </script>
