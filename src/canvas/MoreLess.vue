@@ -1,6 +1,6 @@
 <template>
 	<div class="column">
-		<div v-if="mode=='display'" class="columns">
+		<div v-if="mode=='display'" class="columns is-vcentered">
 			<div v-show="expandable && !isExpanded" class="column is-narrow">
 				<slot name="expand-button">
 					<button type="button" class="button" @click="expand">More</button>
@@ -15,7 +15,7 @@
 				</slot>
 			</div>
 		</div>
-		<div v-if="mode=='render'" class="columns">
+		<div v-if="mode=='render'" class="columns is-vcentered">
 			<div v-if="expandable && !isExpanded" class="column is-narrow">
 				<slot name="expand-button">
 					<button type="button" class="button" @click="expand">More</button>
